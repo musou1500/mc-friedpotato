@@ -1,0 +1,16 @@
+[
+{
+  "modid": "firstmod",
+  "name": "first mod",
+  "description": "my first mod.",
+  "version": "0.0.1",
+  "mcversion": "1.10.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["musou1500"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
