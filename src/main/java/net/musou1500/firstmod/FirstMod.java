@@ -33,14 +33,7 @@ public class FirstMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-//        GameRegistry.addShapedRecipe(
-//            new ResourceLocation(location),
-//            new ResourceLocation(location),
-//            new ItemStack(friedPotato, 8),
-//            "   ",
-//            " P ",
-//            "   ",
-//            'P', Items.POTATO);
+
     }
 
     @SubscribeEvent
@@ -49,12 +42,21 @@ public class FirstMod {
     }
 
     @SubscribeEvent
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+        GameRegistry.addShapedRecipe(
+                friedPotato.getRegistryName(),
+                friedPotato.getRegistryName(),
+                new ItemStack(friedPotato, 8),
+                "   ",
+                " P ",
+                "   ",
+                'P', Items.POTATO);
+    }
+
+    @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void registerModels(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(friedPotato, 0, new ModelResourceLocation(friedPotato.getRegistryName(), "inventory"));
     }
 
-    @SubscribeEvent
-    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-    }
 }
