@@ -14,6 +14,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = FirstMod.MOD_ID, name = FirstMod.MOD_NAME, version = FirstMod.MOD_VERSION)
 @Mod.EventBusSubscriber
@@ -47,7 +49,8 @@ public class FirstMod {
     }
 
     @SubscribeEvent
-    public static void registerMoidels(ModelRegistryEvent event) {
+    @SideOnly(Side.CLIENT)
+    public static void registerModels(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(friedPotato, 0, new ModelResourceLocation(friedPotato.getRegistryName(), "inventory"));
     }
 
